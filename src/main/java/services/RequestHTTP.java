@@ -8,10 +8,10 @@ import java.net.http.HttpResponse;
 
 public class RequestHTTP {
 
-    private final String URI_API = "https://dadosabertos.camara.leg.br/api/v2/";
+    private static final String URI_API = "https://dadosabertos.camara.leg.br/api/v2/";
 
-    public String doRequest(String address){
-        String search = this.URI_API + address;
+    public static String doRequest(String address){
+        String search = URI_API + address;
 
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder()
