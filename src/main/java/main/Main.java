@@ -1,10 +1,10 @@
 package main;
 
-import domain.models.PartidoWrapper;
-import domain.dtos.Deputado;
-import domain.models.DeputadoWrapper;
-import domain.dtos.Partido;
-import services.DataConverter;
+import domain.models.partido.PartidoWrapper;
+import domain.models.deputado.Deputado;
+import domain.models.deputado.DeputadoWrapper;
+import domain.models.partido.Partido;
+import services.Desserializar;
 import services.RequestHTTP;
 
 import java.util.List;
@@ -13,7 +13,7 @@ import java.util.Scanner;
 public class Main {
 
     private static final Scanner scanner = new Scanner(System.in).useDelimiter("\n");
-    private static final DataConverter dataConverter = new DataConverter();
+    private static final Desserializar DESSERIALIZAR = new Desserializar();
 
 
     public static void main(String[] args) {
@@ -35,7 +35,7 @@ public class Main {
     private static void exibeDeputados(){
         String URI = "deputados";
         String json = RequestHTTP.doRequest(URI);
-        DeputadoWrapper deputadosList = dataConverter.dataConverter(json, DeputadoWrapper.class);
+        DeputadoWrapper deputadosList = DESSERIALIZAR.dataConverter(json, DeputadoWrapper.class);
 
         List<Deputado> deputados = deputadosList.getDeputados();
         deputados.forEach(System.out::println);
@@ -44,7 +44,7 @@ public class Main {
     private static void exibePartidos(){
         String URI = "partidos";
         String json = RequestHTTP.doRequest(URI);
-        PartidoWrapper partidosList = dataConverter.dataConverter(json, PartidoWrapper.class);
+        PartidoWrapper partidosList = DESSERIALIZAR.dataConverter(json, PartidoWrapper.class);
 
         List<Partido> partidos = partidosList.getPartidos();
         partidos.forEach(System.out::println);

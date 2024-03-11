@@ -1,4 +1,4 @@
-package domain.dtos;
+package domain.models.partido;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;

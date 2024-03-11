@@ -1,8 +1,7 @@
-package domain.models;
+package domain.models.deputado;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import domain.dtos.Deputado;
 
 import java.util.List;
 

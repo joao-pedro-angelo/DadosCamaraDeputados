@@ -2,9 +2,9 @@ package services;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import domain.interfaces.IDataConverter;
+import domain.interfaces.iDesserializar;
 
-public class DataConverter implements IDataConverter {
+public class Desserializar implements iDesserializar {
 
     private final ObjectMapper mapper = new ObjectMapper();
 

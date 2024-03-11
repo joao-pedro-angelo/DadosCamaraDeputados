@@ -1,5 +1,5 @@
 package domain.interfaces;
 
-public interface IDataConverter {
+public interface iDesserializar {
     <T> T dataConverter(String json, Class<T> classe);
 }
