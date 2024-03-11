@@ -1,8 +1,13 @@
 package main;
 
+import domain.models.PartidoWrapper;
+import domain.models.dtos.Deputado;
+import domain.models.DeputadoWrapper;
+import domain.models.dtos.Partido;
 import services.DataConverter;
 import services.RequestHTTP;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
@@ -30,13 +35,19 @@ public class Main {
     private static void exibeDeputados(){
         String URI = "deputados";
         String json = RequestHTTP.doRequest(URI);
-        System.out.println(json);
+        DeputadoWrapper deputadosList = dataConverter.dataConverter(json, DeputadoWrapper.class);
+
+        List<Deputado> deputados = deputadosList.getDeputados();
+        deputados.forEach(System.out::println);
     }
 
     private static void exibePartidos(){
         String URI = "partidos";
         String json = RequestHTTP.doRequest(URI);
-        System.out.println(json);
+        PartidoWrapper partidosList = dataConverter.dataConverter(json, PartidoWrapper.class);
+
+        List<Partido> partidos = partidosList.getPartidos();
+        partidos.forEach(System.out::println);
     }
 
     private static void finalizaAplicacao(){

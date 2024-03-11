@@ -11,6 +11,7 @@ public class Menu {
                 Escolha uma opção:
                 1- Visualizar deputados
                 2- Visualizar partidos
+                3- Sair
                 """);
         try{
             return Integer.parseInt(scanner.nextLine());
