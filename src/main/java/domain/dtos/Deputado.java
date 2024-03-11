@@ -1,4 +1,4 @@
-package domain.models.dtos;
+package domain.dtos;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -16,4 +16,13 @@ public record Deputado(
         @JsonAlias("email")
         String email
 )
-{}
+{
+        @Override
+        public String toString() {
+                return "ID: " + id + "\n" +
+                        "Nome: " + nome + "\n" +
+                        "Partido: " + partido + "\n" +
+                        "UF: " + uf + "\n" +
+                        "Email: " + email + "\n";
+        }
+}

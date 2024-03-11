@@ -1,4 +1,4 @@
-package domain.models.dtos;
+package domain.dtos;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -12,4 +12,11 @@ public record Partido(
         @JsonAlias("nome")
         String nome
 )
-{}
+{
+        @Override
+        public String toString() {
+                return "ID: " + id + "\n" +
+                        "Sigla: " + sigla + "\n" +
+                        "Nome: " + nome + "\n";
+        }
+}

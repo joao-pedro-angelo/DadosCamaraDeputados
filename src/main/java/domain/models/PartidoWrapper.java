@@ -2,7 +2,7 @@ package domain.models;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import domain.models.dtos.Partido;
+import domain.dtos.Partido;
 
 import java.util.List;
 

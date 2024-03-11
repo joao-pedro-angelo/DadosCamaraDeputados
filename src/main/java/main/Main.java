@@ -1,9 +1,9 @@
 package main;
 
 import domain.models.PartidoWrapper;
-import domain.models.dtos.Deputado;
+import domain.dtos.Deputado;
 import domain.models.DeputadoWrapper;
-import domain.models.dtos.Partido;
+import domain.dtos.Partido;
 import services.DataConverter;
 import services.RequestHTTP;
 
