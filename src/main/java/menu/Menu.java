@@ -14,7 +14,7 @@ public class Menu {
                 3- Visualizar eventos da Câmara
                 4- Visualizar votações
                 5- Exibir deputado específico
-                6- Votações de um deputado
+                6- Despesas de um deputado
                 7- Exibir partido específico
                 8- Sair
                 """);

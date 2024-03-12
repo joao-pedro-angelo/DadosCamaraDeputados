@@ -10,13 +10,20 @@ public record Partido(
         @JsonAlias("sigla")
         String sigla,
         @JsonAlias("nome")
-        String nome
+        String nome,
+        @JsonAlias("status")
+        StatusPartido statusPartido
 )
 {
         @Override
         public String toString() {
-                return "ID: " + id + "\n" +
-                        "Sigla: " + sigla + "\n" +
-                        "Nome: " + nome + "\n";
+                StringBuilder sb = new StringBuilder();
+                sb.append("Partido{\n");
+                if (id != null) sb.append("  ID: ").append(id).append("\n");
+                if (sigla != null) sb.append("  Sigla: ").append(sigla).append("\n");
+                if (nome != null) sb.append("  Nome: ").append(nome).append("\n");
+                if (statusPartido != null) sb.append("  Status do Partido:\n").append(statusPartido);
+                sb.append("}");
+                return sb.toString();
         }
 }

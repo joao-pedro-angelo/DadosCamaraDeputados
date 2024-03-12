@@ -18,7 +18,7 @@ public class RequestHTTP {
                 .uri(URI.create(search))
                 .build();
 
-        HttpResponse<String> response = null;
+        HttpResponse<String> response;
         try {
             response = client
                     .send(request, HttpResponse.BodyHandlers.ofString());

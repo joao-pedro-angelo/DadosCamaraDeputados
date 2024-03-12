@@ -1,8 +1,10 @@
 import domain.models.deputado.DetalharDeputado;
 import domain.models.deputado.ListaDeDeputados;
 import domain.models.deputado.Deputado;
+import domain.models.despesas.ListaDeDespesas;
 import domain.models.eventos.Evento;
 import domain.models.eventos.ListaDeEventos;
+import domain.models.partido.DetalharPartido;
 import domain.models.partido.ListaDePartidos;
 import domain.models.partido.Partido;
 import domain.models.votacoes.ListaDeVotacoes;
@@ -40,7 +42,7 @@ public class Main {
                     deputadoEspecifico();
                     break;
                 case 6:
-                    votacaoDeputado();
+                    despesasDeputado();
                     break;
                 case 7:
                     partidoEspecifico();
@@ -97,11 +99,21 @@ public class Main {
     }
 
     private static void partidoEspecifico(){
+        System.out.println("Digite o ID do partido: ");
+        int id = Integer.parseInt(scanner.nextLine());
+        String json = RequestHTTP.doRequest("partidos/" + id);
 
+        DetalharPartido partido = DESSERIALIZAR.dataConverter(json, DetalharPartido.class);
+        System.out.println(partido);
     }
 
-    private static void votacaoDeputado(){
+    private static void despesasDeputado(){
+        System.out.println("Digite o ID do deputado: ");
+        int id = Integer.parseInt(scanner.nextLine());
+        String json = RequestHTTP.doRequest("deputados/" + id + "/despesas");
 
+        ListaDeDespesas despesas = DESSERIALIZAR.dataConverter(json, ListaDeDespesas.class);
+        System.out.println(despesas);
     }
 
     private static void finalizaAplicacao(){

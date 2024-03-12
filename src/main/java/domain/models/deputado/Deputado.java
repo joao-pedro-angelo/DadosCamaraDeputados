@@ -33,7 +33,7 @@ public record Deputado(
                 if (uf != null) sb.append("  UF: ").append(uf).append("\n");
                 if (email != null) sb.append("  Email: ").append(email).append("\n");
                 if (redesSociais != null) sb.append("  Redes sociais: ").append(redesSociais).append("\n");
-                if (ultimoStatus != null) sb.append("  Status:\n").append(ultimoStatus).append("\n");
+                if (ultimoStatus != null) sb.append("  Status:\n").append(ultimoStatus);
                 sb.append("}");
                 return sb.toString();
         }
