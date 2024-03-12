@@ -4,6 +4,23 @@
 > Câmara dos Deputados do Brasil, disponível em [https://dadosabertos.camara.leg.br/swagger/api.html](https://dadosabertos.camara.leg.br/swagger/api.html).
 
 ---
+## Funcionalidades implementadas
+
+- **Exibir todos os atuais deputados**;
+- **Detalhar deputado específico**;
+- **Listar partidos**;
+- **Consultar partido específico**;
+- **Elencar eventos que ocorreram na Câmara**;
+- **Relatar despesas de determinado deputado**.
+
+---
+## Como utilizar
+
+O programa funciona via linha de comando, então basta clonar este repositório e executar a aplicação em sua IDE de preferência.
+
+Certifique-se de ter o `Java JDK` instalado em sua máquina.
+
+---
 ## Funcionamento do Programa
 
 O programa faz requisições HTTP para a API da Câmara dos Deputados e obtêm os dados.
