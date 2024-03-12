@@ -1,8 +1,8 @@
 package main;
 
-import domain.models.partido.PartidoWrapper;
+import domain.models.deputado.ListaDeDeputados;
 import domain.models.deputado.Deputado;
-import domain.models.deputado.DeputadoWrapper;
+import domain.models.partido.ListaDePartidos;
 import domain.models.partido.Partido;
 import services.Desserializar;
 import services.RequestHTTP;
@@ -35,18 +35,18 @@ public class Main {
     private static void exibeDeputados(){
         String URI = "deputados";
         String json = RequestHTTP.doRequest(URI);
-        DeputadoWrapper deputadosList = DESSERIALIZAR.dataConverter(json, DeputadoWrapper.class);
+        ListaDeDeputados deputadosList = DESSERIALIZAR.dataConverter(json, ListaDeDeputados.class);
 
-        List<Deputado> deputados = deputadosList.getDeputados();
+        List<Deputado> deputados = deputadosList.deputados();
         deputados.forEach(System.out::println);
     }
 
     private static void exibePartidos(){
         String URI = "partidos";
         String json = RequestHTTP.doRequest(URI);
-        PartidoWrapper partidosList = DESSERIALIZAR.dataConverter(json, PartidoWrapper.class);
+        ListaDePartidos partidosList = DESSERIALIZAR.dataConverter(json, ListaDePartidos.class);
 
-        List<Partido> partidos = partidosList.getPartidos();
+        List<Partido> partidos = partidosList.partidos();
         partidos.forEach(System.out::println);
     }
 
