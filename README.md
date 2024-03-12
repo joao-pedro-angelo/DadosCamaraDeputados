@@ -10,8 +10,8 @@
 - **Detalhar deputado específico**;
 - **Listar partidos**;
 - **Consultar partido específico**;
-- **Elencar eventos que ocorreram na Câmara**;
-- **Relatar despesas de determinado deputado**.
+- **Relatar despesas de determinado deputado**;
+- **Elencar eventos e votações que ocorreram na Câmara**.
 
 ---
 ## Como utilizar
