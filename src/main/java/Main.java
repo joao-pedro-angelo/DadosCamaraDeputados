@@ -1,3 +1,4 @@
+import domain.models.deputado.DetalharDeputado;
 import domain.models.deputado.ListaDeDeputados;
 import domain.models.deputado.Deputado;
 import domain.models.eventos.Evento;
@@ -21,7 +22,7 @@ public class Main {
 
     public static void main(String[] args) {
         int opcao = Menu.menu(scanner);
-        while (opcao != 5){
+        while (opcao != 8){
             switch (opcao){
                 case 1:
                     exibeDeputados();
@@ -34,6 +35,15 @@ public class Main {
                     break;
                 case 4:
                     exibeVotacoes();
+                    break;
+                case 5:
+                    deputadoEspecifico();
+                    break;
+                case 6:
+                    votacaoDeputado();
+                    break;
+                case 7:
+                    partidoEspecifico();
                     break;
             }
             opcao = Menu.menu(scanner);
@@ -75,6 +85,23 @@ public class Main {
 
         List<Votacao> votacoes = votacoesList.votacaos();
         votacoes.forEach(System.out::println);
+    }
+
+    private static void deputadoEspecifico(){
+        System.out.println("Digite o ID do deputado: ");
+        int id = Integer.parseInt(scanner.nextLine());
+        String json = RequestHTTP.doRequest("deputados/" + id);
+
+        DetalharDeputado deputado = DESSERIALIZAR.dataConverter(json, DetalharDeputado.class);
+        System.out.println(deputado);
+    }
+
+    private static void partidoEspecifico(){
+
+    }
+
+    private static void votacaoDeputado(){
+
     }
 
     private static void finalizaAplicacao(){

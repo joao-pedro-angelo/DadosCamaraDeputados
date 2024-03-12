@@ -13,13 +13,16 @@ public class Menu {
                 2- Visualizar partidos
                 3- Visualizar eventos da Câmara
                 4- Visualizar votações
-                5- Sair
+                5- Exibir deputado específico
+                6- Votações de um deputado
+                7- Exibir partido específico
+                8- Sair
                 """);
         try{
             return Integer.parseInt(scanner.nextLine());
         } catch (NumberFormatException e){
             System.out.println("Entrada inválida...");
-            return 5;
+            return 8;
         }
     }
 
