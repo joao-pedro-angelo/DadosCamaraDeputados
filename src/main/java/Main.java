@@ -18,12 +18,12 @@ import java.util.Scanner;
 
 public class Main {
 
-    private static final Scanner scanner = new Scanner(System.in).useDelimiter("\n");
+    private static final Scanner SCANNER = new Scanner(System.in).useDelimiter("\n");
     private static final Desserializar DESSERIALIZAR = new Desserializar();
 
 
     public static void main(String[] args) {
-        int opcao = Menu.menu(scanner);
+        int opcao = Menu.menu(SCANNER);
         while (opcao != 8){
             switch (opcao){
                 case 1:
@@ -48,7 +48,7 @@ public class Main {
                     partidoEspecifico();
                     break;
             }
-            opcao = Menu.menu(scanner);
+            opcao = Menu.menu(SCANNER);
         }
         finalizaAplicacao();
     }
@@ -91,7 +91,7 @@ public class Main {
 
     private static void deputadoEspecifico(){
         System.out.println("Digite o ID do deputado: ");
-        int id = Integer.parseInt(scanner.nextLine());
+        int id = Integer.parseInt(SCANNER.nextLine());
         String json = RequestHTTP.doRequest("deputados/" + id);
 
         DetalharDeputado deputado = DESSERIALIZAR.dataConverter(json, DetalharDeputado.class);
@@ -100,7 +100,7 @@ public class Main {
 
     private static void partidoEspecifico(){
         System.out.println("Digite o ID do partido: ");
-        int id = Integer.parseInt(scanner.nextLine());
+        int id = Integer.parseInt(SCANNER.nextLine());
         String json = RequestHTTP.doRequest("partidos/" + id);
 
         DetalharPartido partido = DESSERIALIZAR.dataConverter(json, DetalharPartido.class);
@@ -109,7 +109,7 @@ public class Main {
 
     private static void despesasDeputado(){
         System.out.println("Digite o ID do deputado: ");
-        int id = Integer.parseInt(scanner.nextLine());
+        int id = Integer.parseInt(SCANNER.nextLine());
         String json = RequestHTTP.doRequest("deputados/" + id + "/despesas");
 
         ListaDeDespesas despesas = DESSERIALIZAR.dataConverter(json, ListaDeDespesas.class);
