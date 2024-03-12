@@ -16,7 +16,7 @@
 ---
 ## Como utilizar
 
-1. Clone o repositório: git clone https://github.com/joao-pedro-angelo/DadosCamaraDeputados.git;
+1. Clone o repositório: `git clone https://github.com/joao-pedro-angelo/DadosCamaraDeputados.git`;
 2. No diretório do arquivo `pom.xml`execute o comando `mvn compile`;
 3. Neste mesmo diretório, execute: `mvn exec:java -Dexec.mainClass="Main"`
 
