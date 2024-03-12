@@ -1,7 +1,11 @@
 import domain.models.deputado.ListaDeDeputados;
 import domain.models.deputado.Deputado;
+import domain.models.eventos.Evento;
+import domain.models.eventos.ListaDeEventos;
 import domain.models.partido.ListaDePartidos;
 import domain.models.partido.Partido;
+import domain.models.votacoes.ListaDeVotacoes;
+import domain.models.votacoes.Votacao;
 import menu.Menu;
 import services.Desserializar;
 import services.RequestHTTP;
@@ -17,13 +21,19 @@ public class Main {
 
     public static void main(String[] args) {
         int opcao = Menu.menu(scanner);
-        while (opcao != 3){
+        while (opcao != 5){
             switch (opcao){
                 case 1:
                     exibeDeputados();
                     break;
                 case 2:
                     exibePartidos();
+                    break;
+                case 3:
+                    exibeEventos();
+                    break;
+                case 4:
+                    exibeVotacoes();
                     break;
             }
             opcao = Menu.menu(scanner);
@@ -47,6 +57,24 @@ public class Main {
 
         List<Partido> partidos = partidosList.partidos();
         partidos.forEach(System.out::println);
+    }
+
+    private static void exibeEventos(){
+        String URI = "eventos";
+        String json = RequestHTTP.doRequest(URI);
+        ListaDeEventos eventosList = DESSERIALIZAR.dataConverter(json, ListaDeEventos.class);
+
+        List<Evento> eventos = eventosList.eventos();
+        eventos.forEach(System.out::println);
+    }
+
+    private static void exibeVotacoes(){
+        String URI = "votacoes";
+        String json = RequestHTTP.doRequest(URI);
+        ListaDeVotacoes votacoesList = DESSERIALIZAR.dataConverter(json, ListaDeVotacoes.class);
+
+        List<Votacao> votacoes = votacoesList.votacaos();
+        votacoes.forEach(System.out::println);
     }
 
     private static void finalizaAplicacao(){

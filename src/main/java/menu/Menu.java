@@ -11,13 +11,15 @@ public class Menu {
                 Escolha uma opção:
                 1- Visualizar deputados
                 2- Visualizar partidos
-                3- Sair
+                3- Visualizar eventos da Câmara
+                4- Visualizar votações
+                5- Sair
                 """);
         try{
             return Integer.parseInt(scanner.nextLine());
         } catch (NumberFormatException e){
             System.out.println("Entrada inválida...");
-            return 3;
+            return 5;
         }
     }
 
