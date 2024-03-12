@@ -16,9 +16,9 @@
 ---
 ## Como utilizar
 
-O programa funciona via linha de comando, então basta clonar este repositório e executar a aplicação em sua IDE de preferência.
-
-Certifique-se de ter o `Java JDK` instalado em sua máquina.
+1. Clone o repositório: git clone https://github.com/joao-pedro-angelo/DadosCamaraDeputados.git;
+2. No diretório do arquivo `pom.xml`execute o comando `mvn compile`;
+3. Neste mesmo diretório, execute: `mvn exec:java -Dexec.mainClass="Main"`
 
 ---
 ## Funcionamento do Programa
